@@ -1,6 +1,19 @@
 # resume-expert
 
-一个 Claude Code Skill，为 AI 提供行业自适应的简历生成、深度评审与增量修改能力。不是简单的"填表生成器"——它内置了招聘市场知识（ATS 筛选规则、行业×职级差异化策略、中英文简历规范），让 Claude 像一位资深职业顾问一样工作。
+一份通用的 **AI Agent 操作手册**（System Prompt / Custom Instructions），让任意 AI 助手具备行业自适应的简历生成、深度评审与增量修改能力。不是简单的"填表生成器"——它内置了招聘市场知识（ATS 筛选规则、行业×职级差异化策略、中英文简历规范），让 AI 像一位资深职业顾问一样工作。
+
+### 适配平台
+
+| 平台 | 使用方式 |
+|------|----------|
+| **Claude Code** | 放入项目目录，自动识别为 Skill |
+| **Cursor** | 粘贴到 `.cursorrules` 或 Cursor Settings → Rules |
+| **GitHub Copilot** | 粘贴到 `.github/copilot-instructions.md` |
+| **ChatGPT Custom GPT** | 粘贴到 GPT 配置的 Instructions 字段 |
+| **Windsurf** | 粘贴到 `.windsurfrules` |
+| **任意 LLM 客户端** | 作为 System Prompt 粘贴，配合对话使用 |
+
+核心文件只有一个：[`SKILL.md`](./SKILL.md)——约 440 行的纯文本操作手册，零依赖，直接使用。
 
 ## 为什么用这个 Skill？
 
@@ -174,14 +187,23 @@ Skill 会根据用户意图自动路由到对应模式，无需手动切换：
 
 ## 快速开始
 
-### 1. 安装
+### 1. 使用方式
 
-将本文件夹复制到你的 Claude Code 项目或工作区即可。Claude Code 会自动发现 `.md` 文件中定义 Skill 的文件。
+**直接使用**——把 `SKILL.md` 的内容作为 System Prompt 粘贴到任意 AI 对话中，然后正常对话即可触发：
 
-```bash
-# 如果尚未安装 docx 依赖：
-npm install docx
 ```
+你是一位行业自适应简历策略顾问。以下是你的操作手册：
+[粘贴 SKILL.md 全部内容]
+
+---
+用户：帮我做一份简历，投字节跳动后端实习
+```
+
+**Claude Code 用户**——将本文件夹复制到项目目录，Skill 自动加载。
+
+**Cursor / Copilot 用户**——将 `SKILL.md` 的内容追加到项目的 Rules 文件中（`.cursorrules` 或 `.github/copilot-instructions.md`）。
+
+### 2. 可选依赖（仅生成 docx 时需要）
 
 ### 2. 触发
 
