@@ -12,36 +12,37 @@
 
 ## 安装方式
 
+所有平台都是**一次放入，自动生效**——把 `SKILL.md` 放到对应位置即可，无需每次粘贴 prompt。
+
 ### Claude Code
 
-将整个文件夹复制到项目目录（或全局 `~/.claude/skills/`），Claude Code 自动识别：
+将整个文件夹放入项目目录（或全局技能目录），Claude Code 自动识别为 Skill：
 
 ```bash
 git clone https://github.com/Tissue-for-charlie/resume-expert.git
-# 放入任意 Claude Code 项目目录即可
 ```
-
-对话中直接说"帮我做一份简历"，Skill 自动触发。
 
 ### Cursor
 
-将 `SKILL.md` 内容追加到项目根目录的 `.cursorrules` 文件中（或在 Cursor Settings → Rules → Project Rules 中添加）。Cursor 每次对话自动加载，无需手动引用。
+将 `SKILL.md` 内容放入项目根目录的 `.cursorrules` 文件（或在 Cursor Settings → Rules → Project Rules 中添加）。Cursor 每次对话自动加载。
 
 ### GitHub Copilot
 
-将 `SKILL.md` 内容追加到项目根目录的 `.github/copilot-instructions.md` 文件中。Copilot Chat 自动读取并遵循。
-
-### ChatGPT Custom GPT
-
-创建 Custom GPT 时，将 `SKILL.md` 全部内容粘贴到配置页的 **Instructions** 字段。之后每次选择该 GPT 对话即自动生效。
+将 `SKILL.md` 内容放入项目根目录的 `.github/copilot-instructions.md`。Copilot Chat 自动读取并遵循。
 
 ### Windsurf
 
-将 `SKILL.md` 内容追加到项目根目录的 `.windsurfrules` 文件中，自动加载。
+将 `SKILL.md` 内容放入项目根目录的 `.windsurfrules` 文件，自动加载。
 
-### Cline / Roo Code / 其他 AI 编程助手
+### Cline / Roo Code
 
-在项目根目录创建 `.clinerules` 或工具对应的规则文件，将 `SKILL.md` 内容粘贴进去。多数现代 AI 编程工具都支持项目级规则文件。
+将 `SKILL.md` 内容放入项目根目录的 `.clinerules` 文件（或对应工具的规则文件），自动加载。
+
+### ChatGPT / 通用 AI 客户端
+
+创建 Custom GPT 时，将 `SKILL.md` 内容粘贴到配置页的 **Instructions** 字段，之后选择该 GPT 对话即自动生效。其他支持 System Prompt 的客户端同理——粘贴一次，永久使用。
+
+> 💡 **本质相同**：所有平台的安装都是"把 SKILL.md 放进 AI 能读到的地方"，唯一区别是文件名或配置入口不同。
 
 ---
 
