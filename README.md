@@ -12,8 +12,9 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/中文-English-brightgreen" alt="Language">
-  <img src="https://img.shields.io/badge/行业-6%20类-ff69b4" alt="Industries">
+  <img src="https://img.shields.io/badge/行业-14%20类-ff69b4" alt="Industries">
   <img src="https://img.shields.io/badge/职级-实习%20%7C%20校招%20%7C%20社招-orange" alt="Career Levels">
+  <img src="https://img.shields.io/badge/SKILL.md-~700%20行-lightgrey" alt="Size">
 </p>
 
 ---
@@ -67,7 +68,7 @@
 
 ## 核心能力
 
-- ✅ **行业 × 职级适配** — 互联网 / 金融 / 外企 / 国企 / 产品 / 设计 × 实习 / 校招 / 社招，18 种组合各有策略
+- ✅ **行业 × 职级适配** — 14 个行业（互联网 / 金融 / 外企 / 国企 / 产品 / 设计 / 教育 / 医疗 / 法律 / 建筑 / 媒体 / 零售 / 游戏 / 政府）+ 通用策略自动推导 × 实习 / 校招 / 社招，42+ 种组合各有策略
 - ✅ **ATS 兼容** — 线性布局、禁止表格双栏、关键词双写、格式避坑指南
 - ✅ **项目描述重写** — 将"负责 XX 模块"转为个人实践叙事 + 量化产出
 - ✅ **英文简历** — STAR 框架、按职能分类动作动词、严格一页、LinkedIn 必填
@@ -94,10 +95,30 @@ pip install pymupdf       # PDF 文本提取
 
 ```
 resume-expert/
-├── SKILL.md     # 全部逻辑，约 440 行
+├── SKILL.md              # 全部逻辑，约 700 行
 ├── README.md
-└── LICENSE
+├── LICENSE
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── .gitignore
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md
+│   │   ├── feature_request.md
+│   │   └── config.yml
+│   └── PULL_REQUEST_TEMPLATE.md
+├── examples/
+│   ├── sample-review-output.md    # 评审报告示例
+│   ├── sample-skeleton-resume.md  # 骨架简历示例
+│   └── sample-english-star.md     # 英文 STAR 重写示例
+└── docs/
+    ├── ats-guide.md       # ATS 工作原理与 JD 逆向工程
+    ├── english-resume.md  # STAR 框架与英文简历规范
+    └── docx-spec.md       # 排版参数与 docx-js 常见坑点
 ```
+
+[📂 查看示例输出 →](examples/)
 
 ---
 

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 使用文档
+    url: https://github.com/Tissue-for-charlie/resume-expert#readme
+    about: 使用前请先阅读 README
+  - name: ❓ 使用问题 / 讨论
+    url: https://github.com/Tissue-for-charlie/resume-expert/discussions
+    about: 一般性问题请发到 Discussions 而非 Issue
