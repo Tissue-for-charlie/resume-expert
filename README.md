@@ -1,189 +1,102 @@
-# resume-expert
+<h1 align="center">📄 resume-expert</h1>
 
-**安装即用的 AI Skill**——让任意 AI 编程助手化身行业自适应的简历策略顾问。一次安装，对话中自动触发，无需每次粘贴 prompt。不是简单的模板生成器，内置了招聘市场知识（ATS 筛选规则、行业×职级差异化策略、中英文简历规范），AI 会像资深职业顾问一样工作。
+<p align="center">
+  <strong>简历生成 · 深度评审 · 增量修改</strong> —— AI 一站式搞定
+</p>
 
----
+<p align="center">
+  <a href="https://github.com/Tissue-for-charlie/resume-expert/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
+  <a href="#安装"><img src="https://img.shields.io/badge/platform-Claude%20Code%20%7C%20Cursor%20%7C%20Copilot%20%7C%20ChatGPT%20%7C%20Windsurf-8A2BE2" alt="Platforms"></a>
+  <a href="https://github.com/Tissue-for-charlie/resume-expert/stargazers"><img src="https://img.shields.io/github/stars/Tissue-for-charlie/resume-expert?style=social" alt="Stars"></a>
+</p>
 
-## 核心文件
-
-整个 Skill 就一个文件：[`SKILL.md`](./SKILL.md)，约 440 行纯文本。各平台安装后自动加载，对话中提及简历相关关键词即触发。
-
----
-
-## 安装方式
-
-所有平台都是**一次放入，自动生效**。
-
-### Claude Code
-
-```bash
-git clone https://github.com/Tissue-for-charlie/resume-expert.git
-```
-
-### Cursor
-
-```bash
-curl -o .cursorrules https://raw.githubusercontent.com/Tissue-for-charlie/resume-expert/master/SKILL.md
-```
-
-### GitHub Copilot
-
-```bash
-curl -o .github/copilot-instructions.md https://raw.githubusercontent.com/Tissue-for-charlie/resume-expert/master/SKILL.md
-```
-
-### Windsurf
-
-```bash
-curl -o .windsurfrules https://raw.githubusercontent.com/Tissue-for-charlie/resume-expert/master/SKILL.md
-```
-
-### Cline / Roo Code
-
-```bash
-curl -o .clinerules https://raw.githubusercontent.com/Tissue-for-charlie/resume-expert/master/SKILL.md
-```
-
-### ChatGPT Custom GPT
-
-创建 Custom GPT 时，将 [`SKILL.md`](./SKILL.md) 内容粘贴到配置页的 **Instructions** 字段。
-
-> 💡 本质一样：把 `SKILL.md` 放进 AI 能读到的地方。以上命令直接复制粘贴到终端执行即可。
+<p align="center">
+  <img src="https://img.shields.io/badge/中文-English-brightgreen" alt="Language">
+  <img src="https://img.shields.io/badge/行业-6%20类-ff69b4" alt="Industries">
+  <img src="https://img.shields.io/badge/职级-实习%20%7C%20校招%20%7C%20社招-orange" alt="Career Levels">
+</p>
 
 ---
 
-## 触发方式
+## 这是什么？
 
-安装后，在对话中提及以下任意关键词即自动触发：
+一个 **AI Skill** —— 把 `SKILL.md` 丢进项目中，你的 AI 编程助手立刻获得简历专家的能力。自动识别意图，自动适配行业和职级，输出专业级 .docx 文件。
 
-| 你说的话 | AI 做的事 |
-|----------|----------|
-| "帮我做一份简历"、"写简历" | **模式 A** — 收集信息 → 生成 .docx |
-| "帮我看一下这份简历"、"评分" | **模式 B** — 深度评审 → 打分 + 修改建议 |
-| "帮我把这段经历改一下"、"换个说法" | **模式 C** — 精准定位 → 重写 → 一致性检查 |
-| "投字节后端实习"、"投秋招" | **模式 A**（自动推断行业和职级） |
-| 直接拖入 .docx/.pdf 文件 + "帮我看一下" | **模式 B** — 提取文本 → 评审 |
+> 不是模板生成器。内置招聘市场知识：ATS 规则、行业×职级策略、中英文规范。
 
 ---
 
-## 三种模式
+## 快速安装
 
-### 模式 A：从零生成
+**选择你的 AI 工具，复制对应命令，终端回车即可。**
 
-从零开始做一份简历。7 步完整流程：确定方向 → 分维度收集信息 → 设计结构 → 项目描述重写（核心步骤，将"规格说明书"风格转为个人实践叙事）→ 生成 .docx → 验证 → 失败回退。
+| 工具 | 命令 |
+|------|------|
+| **Claude Code** | `git clone https://github.com/Tissue-for-charlie/resume-expert.git` |
+| **Cursor** | `curl -o .cursorrules https://raw.githubusercontent.com/Tissue-for-charlie/resume-expert/master/SKILL.md` |
+| **GitHub Copilot** | `curl -o .github/copilot-instructions.md https://raw.githubusercontent.com/Tissue-for-charlie/resume-expert/master/SKILL.md` |
+| **Windsurf** | `curl -o .windsurfrules https://raw.githubusercontent.com/Tissue-for-charlie/resume-expert/master/SKILL.md` |
+| **Cline / Roo Code** | `curl -o .clinerules https://raw.githubusercontent.com/Tissue-for-charlie/resume-expert/master/SKILL.md` |
+| **ChatGPT Custom GPT** | 创建 GPT 时将 `SKILL.md` 粘贴到 Instructions |
 
-即使用户只说"帮我做简历"，也能出"骨架简历"——先用最少信息生成占位版，后续逐段填充。
-
-### 模式 B：深度评审
-
-对已有简历打分和诊断。四维度评分（内容质量 40%、排版可读性 25%、关键词覆盖 20%、差异化定位 15%），根据目标行业自动调整权重。每条反馈给出"原文 → 问题 → 建议替换 → 替换理由"四列完整诊断，不说"建议优化措辞"这种空话。
-
-### 模式 C：增量修改
-
-对已有简历做局部调整。支持段落级、章节级、全文搜索替换。每次修改后自动检查：求职意向是否同步、技术栈前后一致、时态统一、bullet 密度平衡。
-
----
-
-## 行业 × 职级决策矩阵
-
-这是整个 Skill 的"北极星"——AI 根据用户的目标行业和职级，自动调整简历结构和侧重点：
-
-| 行业 | 实习/低年级 | 校招/应届 | 社招/跳槽 |
-|------|------------|----------|----------|
-| **互联网/科技** | 项目经历碾压；GitHub 是证据 | 基础扎实 + 深度项目；竞赛加分 | 业务影响力和量化产出 |
-| **金融/银行** | GPA + 学校 + 相关比赛 | 证书 + 实习 + 行业认知 | 交易额/规模/合规意识 |
-| **外企/咨询** | 国际经历、英语、课外领导力 | 咨询实习 + 案例能力 | 项目规模、跨文化协作 |
-| **国企/体制内** | 学校层次 + 专业对口 + 学生干部 | 学历 + 证书 + 相关实习 | 职称/资质、项目体量 |
-| **产品/运营** | 校内实践、社团、自建小产品 | 数据思维、从 0 到 1 案例 | DAU/留存/GMV、团队管理 |
-| **设计/创意** | 作品集链接放最前面 | 实习 + 工具链 + 设计方法论 | 设计系统构建能力 |
+装好后，对话中说"帮我做一份简历"即触发。
 
 ---
 
-## 内置能力
-
-### ATS 兼容性指南
-- 格式避坑：禁止表格/文本框/双栏/图片文字/自定义字体，只用线性单栏布局
-- 关键词策略：JD 反推术语、全称+缩写双写、技能分组别堆砌
-- DOCX vs PDF 投递策略：ATS 系统上传用 DOCX，邮件/内推用 PDF
-
-### 智能工作流
-- **Phase 0 预扫描**：每次对话先并行扫描 Memory / 本地文件 / GitHub / 依赖清单，汇总已知信息，不问重复问题
-- **搜索截断**：单次搜索超 15 个文件自动截断，避免 token 爆炸
-- **粘贴检测**：用户直接粘贴 ≥100 字简历原文，自动识别并跳过文件搜索
-- **批量模式**：用户想快速推进时，合并剩余维度一次性询问
-
-### 容错与回退
-- 三层回退链：docx-js → python-docx → Markdown
-- 损坏文件三选项提示，不自动重试
-- 7 条模式切换路径的状态机，卡在任何状态都能切出
-
-### 隐私保护
-自动过滤：身份证号/护照号、完整住址（仅保留城市）、具体出生日期（仅年份）、银行账户/薪资期望、婚姻/宗教/政治面貌（国企除外）、照片（日韩等地区除外）
-
-### 英文简历支持
-STAR 框架（Situation 情境 - Task 任务 - Action 行动 - Result 结果）、按职能分类动作动词、严格一页规则、LinkedIn 必填
-
-### 低年级/转行策略
-用项目经历碾压、方法论证明大于绩点、竞赛证书靠后放、诚实不虚报但强调组合优势
-
----
-
-## 示例对话
+## 怎么用？
 
 ```
-👤 用户：帮我做一份简历，投字节跳动后端开发实习
+👤 帮我做一份简历，投字节跳动后端开发实习
 
-🤖 AI：[Phase 0 自动扫描]
-📋 预扫描结果：
-- 从 Memory 获知：Go, Python, 计算机专业, github.com/yourname
-- 找到本地文件：项目经历.md (2026-06-20)
-以上信息是否完整准确？
+🤖 📋 预扫描结果：已从你的项目和 GitHub 获取到以下信息...
+   确认无误的话，我们先确定基本信息？
 
-👤 用户：准确
+👤 张三，13800138000，zhangsan@example.com，北京
 
-🤖 AI：[Step 1] 已确认：互联网/科技，后端实习，中文，一页。
-[Step 2] 先确认基本信息——姓名/电话/邮箱/城市？
-
-👤 用户：张三，13800138000，zhangsan@example.com，北京
-
-🤖 AI：[逐维确认教育背景、项目经历...]
-[Step 3] 结构设计：头部 → 教育 → 项目经历(60-70%) → 技能 → 竞赛，确认？
-
-👤 用户：确认
-
-🤖 AI：[Step 4-7 重写项目描述 → 生成 DOCX → 验证]
-✅ 简历已生成：输出文件/张三_简历.docx
+🤖 [逐维收集信息 → 设计结构 → 重写项目描述 → 生成 .docx]
+   ✅ 简历已生成：输出文件/张三_简历.docx
 ```
+
+| 你说 | AI 做什么 |
+|------|-----------|
+| "写简历" / "投秋招" | **生成模式** — 收集信息 → 输出 .docx |
+| "帮我看一下这份简历" | **评审模式** — 四维评分 + 逐条修改建议 |
+| "帮我把这段改一下" | **修改模式** — 精准替换 + 一致性检查 |
+
+---
+
+## 核心能力
+
+- ✅ **行业 × 职级适配** — 互联网 / 金融 / 外企 / 国企 / 产品 / 设计 × 实习 / 校招 / 社招，18 种组合各有策略
+- ✅ **ATS 兼容** — 线性布局、禁止表格双栏、关键词双写、格式避坑指南
+- ✅ **项目描述重写** — 将"负责 XX 模块"转为个人实践叙事 + 量化产出
+- ✅ **英文简历** — STAR 框架、按职能分类动作动词、严格一页、LinkedIn 必填
+- ✅ **隐私保护** — 自动过滤身份证号、完整住址、出生日期、薪资等
+- ✅ **骨架简历** — 信息不足时先生成占位版，后续逐段填充，不反复追问
+- ✅ **三层回退** — docx-js → python-docx → Markdown，任一层失败自动降级
+- ✅ **批量模式** — 用户想快速推进时，一次性抛出全部待确认项
 
 ---
 
 ## 可选依赖
 
-仅在需要生成 .docx 文件时安装：
-
-| 工具 | 用途 | 必需？ |
-|------|------|--------|
-| [docx](https://npmjs.com/package/docx) (npm) | .docx 生成 | 主路径 |
-| [python-docx](https://python-docx.readthedocs.io/) | .docx 读取/回退生成 | 回退 |
-| [PyMuPDF](https://pymupdf.readthedocs.io/) | PDF 文本提取 | 读取 PDF 时 |
-
 ```bash
-npm install docx          # 核心依赖
-pip install python-docx   # 可选回退
-pip install pymupdf       # 可选 PDF 支持
+npm install docx          # .docx 生成（核心）
+pip install python-docx   # 回退生成 / 读取验证
+pip install pymupdf       # PDF 文本提取
 ```
 
-没有这些依赖也不影响 Skill 的核心功能——AI 会降级到 Markdown 输出或纯文本评审。
+无需全部安装——缺失时 AI 会自动降级到 Markdown 输出或纯文本评审。
 
 ---
 
-## 文件结构
+## 文件
 
 ```
 resume-expert/
-├── SKILL.md     # 全部逻辑（约 440 行）
-├── README.md    # 本文件
-└── LICENSE      # MIT
+├── SKILL.md     # 全部逻辑，约 440 行
+├── README.md
+└── LICENSE
 ```
 
 ---
