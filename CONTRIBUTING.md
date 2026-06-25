@@ -31,7 +31,7 @@
 
 ### 文档规范
 
-- SKILL.md 是核心调度文件，保持其可读性——超过 400 行时考虑抽出独立文档到 `references/`
+- SKILL.md 是核心调度文件，保持其可读性——超过 500 行时考虑抽出独立文档到 `references/`
 - 代码块指定语言（```python、```yaml、```bash）
 - 表格对齐，方便纯文本阅读
 
@@ -67,12 +67,14 @@
    - 默认流程（从零生成 → 收集信息 → 结构设计 → 生成 .docx）仍能走通
    - 评审模式（给一份简历 → 四维评分 + 修改建议）仍正常
    - 增量修改（改一段经历 → 一致性检查）仍正常
+   - JD 匹配度扫描（提供 JD + 简历 → 五维匹配度 + 红旗检测 + 优化建议）仍正常
 
 ### 提交前检查清单
 
-- [ ] SKILL.md 行数是否控制在合理范围（当前 ~400 行，目标 ≤450）？如果新增内容超过 50 行，是否应考虑抽出到 `references/` 下？
-- [ ] 如果新增了行业，是否同时更新了评分权重映射表（`references/scoring-system.md`）和改写倾斜列表（`references/industry-matrix.md`）？
+- [ ] SKILL.md 行数是否控制在合理范围（当前 ~520 行，目标 ≤600）？如果新增内容超过 50 行，是否应考虑抽出到 `references/` 下？
+- [ ] 如果新增了行业，是否同时更新了评分权重映射表（`references/scoring-system.md`）、改写倾斜列表（`references/industry-matrix.md`）和 JD 匹配权重映射表（`references/jd-matching.md`）？
 - [ ] 如果修改了评分规则（权重/锚点/行业策略），是否同步更新了 Golden Test Set（`references/scoring-golden-tests.md`，70 份 × 14 行业全覆盖）以保持覆盖？
+- [ ] 如果修改了 JD 匹配相关规则（关键词归一化表 / 能力等级映射 / 红旗检测 / 行业权重），是否同步更新了 `references/jd-matching.md`？
 - [ ] 如果修改了约束规则编号（F1-F3 / C1-C3 / T1），是否全文搜索并更新了所有引用处？
 - [ ] 是否运行了隐私信息泄露检查（`grep` 真实姓名/电话/邮箱）？
 - [ ] 是否更新了 CHANGELOG.md 的 `[Unreleased]` 节？

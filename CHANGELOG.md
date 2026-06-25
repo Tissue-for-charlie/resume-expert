@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2026-06-25
+
+### Added
+
+- **新增模式 D：JD 匹配度扫描** — 对标具体目标岗位 JD 的命中率分析，填补 HR 视角下"对标 JD"评估的空白
+  - **JD 深度解析**：三层信息提取（硬性要求 Must-have / 加分项 Nice-to-have / 隐性要求 Implicit），含经验区间解析、能力等级映射（了解 < 熟悉 < 精通）、关键词归一化表
+  - **五维匹配度评分**：硬性门槛(30) + 关键词覆盖(25) + 经验匹配(20) + 资质匹配(15) + 加分项覆盖(10)，14 个行业各有独立权重映射
+  - **红旗检测**：5 类必查红旗（学历不达标 / 经验不足 / 必备证书缺失 / 必备技术栈缺失 / 时间线冲突）+ 3 类软红旗，每触发 1 项硬性红旗扣 10 分
+  - **优化建议生成**：缺失关键词按优先级建议补齐方式（受 C1 不虚构原则约束——严禁建议编造）
+  - **报告输出**：标准六部分报告 / 极简三行版 / 无 JD 引导提示三种模式
+  - **模式联动**：模式 A → D（生成后追加简版报告）/ 模式 B → D（不重复评分）/ 模式 D → C（按红旗→缺失关键词→加分项优先级修改）
+  - **竞争水位估计**：基于 JD 公开薪资范围 + 公司类型估计市场竞争激烈度
+- **新文件** `references/jd-matching.md`：JD 匹配度扫描完整规范——JD 解析规则、能力等级映射全表、行业权重映射、关键词归一化表、优化建议模板、报告格式示例
+- **触发条件扩展**：新增 "JD 匹配" / "匹配度" / "岗位匹配" / "这个 JD 我能投吗" / "match this JD" 等触发词；附带 JD 文本（招聘链接 / 描述原文）并提到"看看" / "匹配" / "评估"也触发
+- **模式路由规则**：触发后自动路由到模式 A/B/C/D
+- **FAQ 扩展**：Q8 解释模式 B 与模式 D 的边界；Q9 说明模式 D 受 C1 不虚构原则约束
+
+### Changed
+
+- **模式切换规则扩展**：新增模式 D 相关 5 条切换路径（A→D / B→D / C→D / D→C / D→A）
+- **references/ 索引表**：新增 `jd-matching.md` 条目
+- **`scoring-system.md` 新增边界章节**：明确模式 B（行业基准评分）与模式 D（JD 匹配度扫描）的评估标尺、输入要求、评分维度、输出形式、HR 视角差异，及 B→D 衔接规则（不重复评分）
+- **README 更新**：版本徽章 1.2.0 → 1.3.0；references 计数 10 → 11；SKILL.md 行数徽章 ~400 → ~500；新增 JD 匹配模式用法示例和核心能力条目
+- **SKILL.md frontmatter**：版本 1.2.0 → 1.3.0，description 新增"JD 匹配度扫描"描述
+
 ## [1.1.0] - 2026-06-25
 
 ### Added
@@ -110,6 +135,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SKILL.md references/ 索引表 golden tests 条目更新
 - CONTRIBUTING.md 提交前检查清单 golden test 条目更新（14 行业全覆盖）
 
+[1.3.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.3.0
 [1.2.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.2.0
 [1.1.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.1.0
 [1.0.1]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.0.1
