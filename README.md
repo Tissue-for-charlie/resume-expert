@@ -196,9 +196,10 @@ ATS 兼容排版 · 线性单栏布局 · 页数自动控制（应届≤1 页，
 ## ⚙️ 安装依赖（推荐全部安装，体验完整功能）
 
 ```bash
-npm install docx          # .docx 生成（核心）
-pip install python-docx   # 回退生成 / 读取验证
-pip install pymupdf       # PDF 文本提取
+npm install docx                 # .docx 生成（核心）
+pip install python-docx          # 回退生成 / 读取验证
+pip install pymupdf              # PDF 文本提取
+winget install MiKTeX.MiKTeX    # pdflatex — LaTeX 编译（Windows）
 ```
 
 推荐全部安装，以获得最佳的简历输出效果：
@@ -206,6 +207,7 @@ pip install pymupdf       # PDF 文本提取
 - **docx** — 直接生成 ATS 兼容的 Word 文档，即投即用
 - **python-docx** — docx-js 生成失败时的自动回退方案，也用于输出验证
 - **pymupdf** — 支持读取 PDF 简历，方便评审和编辑
+- **pdflatex (MiKTeX)** — 支持 LaTeX 格式简历输出，学术/精确排版场景（macOS/Linux 用户可装 TeX Live：`brew install texlive` 或 `apt install texlive-latex-base`）
 
 > 💡 如果确实无法安装依赖（如受限环境），也可以在对话中要求"输出 Markdown 版本"，AI 会产出一份格式精美的纯文本简历，复制到 Word 即可使用。
 
