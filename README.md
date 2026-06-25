@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/Tissue-for-charlie/resume-expert/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
-  <a href="https://github.com/Tissue-for-charlie/resume-expert/releases"><img src="https://img.shields.io/badge/version-1.4.0-blue" alt="Version"></a>
+  <a href="https://github.com/Tissue-for-charlie/resume-expert/releases"><img src="https://img.shields.io/badge/version-1.5.0-blue" alt="Version"></a>
   <a href="#安装"><img src="https://img.shields.io/badge/platform-Claude%20Code%20%7C%20Cursor%20%7C%20Copilot%20%7C%20ChatGPT%20%7C%20Windsurf-8A2BE2" alt="Platforms"></a>
   <a href="https://github.com/Tissue-for-charlie/resume-expert/stargazers"><img src="https://img.shields.io/github/stars/Tissue-for-charlie/resume-expert?style=social" alt="Stars"></a>
 </p>
@@ -16,8 +16,8 @@
   <img src="https://img.shields.io/badge/行业-15%20类-ff69b4" alt="Industries">
   <img src="https://img.shields.io/badge/职级-实习%20%7C%20校招%20%7C%20社招-orange" alt="Career Levels">
   <img src="https://img.shields.io/badge/格式-DOCX%20%7C%20HTML%20%7C%20LaTeX%20%7C%20Markdown-blue" alt="Formats">
-  <img src="https://img.shields.io/badge/references-11%20文件-blue" alt="References">
-  <img src="https://img.shields.io/badge/SKILL.md-~550%20行-lightgrey" alt="Size">
+  <img src="https://img.shields.io/badge/references-12%20文件-blue" alt="References">
+  <img src="https://img.shields.io/badge/SKILL.md-~700%20行-lightgrey" alt="Size">
 </p>
 
 ---
@@ -75,6 +75,7 @@ git clone https://github.com/Tissue-for-charlie/resume-expert.git
 | "帮我看一下这份简历" | **评审模式** — 四维评分 + 基准对比 + 逐条修改建议 |
 | "帮我把这段改一下" | **修改模式** — 精准替换 + 一致性检查 |
 | "这个 JD 我能投吗" + JD 文本 | **JD 匹配模式** — 五维匹配度 + 红旗检测 + 优化建议 |
+| "面试会问什么" / "准备面试" | **面试预测模式** — 简历信号提取 + Web 搜索面经 + 生成可交互 HTML Q&A |
 
 ```
 👤 帮我看一下这份简历
@@ -120,8 +121,10 @@ git clone https://github.com/Tissue-for-charlie/resume-expert.git
 
 - ✅ **行业 × 职级适配** — 15 个行业（互联网 / 金融 / 外企 / 国企 / 产品 / 设计 / 教育 / 医疗 / 法律 / 建筑 / 媒体 / **娱乐/演艺** / 零售 / 游戏 / 政府）+ 通用策略自动推导 × 实习 / 校招 / 社招，45+ 种组合各有策略
 - ✅ **ATS 兼容** — 线性布局、禁止表格双栏、关键词双写、格式避坑指南。**中国 ATS 专项**：北森 / Moka / 大易适配
-- ✅ **同岗位基准对比** — 评分后自动对比同行业同职级中位数，帮用户定位竞争水位。**金标准评分测试集**：70 份校准简历（14 行业 × 5 分数段全覆盖）+ Web 搜索增强
+- ✅ **同岗位基准对比** — 评分后自动对比同行业同职级中位数，帮用户定位竞争水位。**金标准评分测试集**：75 份校准简历（15 行业 × 5 分数段全覆盖）+ Web 搜索增强
 - ✅ **JD 匹配度扫描** 🆕 — 对标具体岗位 JD 的命中率分析：五维评分（硬性门槛 / 关键词覆盖 / 经验匹配 / 资质匹配 / 加分项覆盖）+ 红旗检测（必备项缺失 / 经验不足 / 学历不达标）+ 优化建议（按优先级补齐缺失关键词，受 C1 不虚构原则约束）
+- ✅ **面试预测与 Q&A 生成** 🆕 — 基于简历内容预测面试官高频追问（6 类问题：技术深度 / 量化数据 / 行为面试 / 行业认知 / 弱势因素 / 反向提问）+ Web 搜索面经增强 + 生成可交互 HTML Q&A（离线自包含、移动端适配、掌握度标记）
+- ✅ **弱势群体专项策略** 🆕 — 自动检测空窗期 / 双非背景 / 大龄求职者三类候选人，应用差异化简历策略 + 面试话术模板 + 投递路径建议
 - ✅ **项目描述重写** — 将"负责 XX 模块"转为个人实践叙事 + 量化产出
 - ✅ **英文简历** — STAR 框架、按职能分类动作动词、严格一页、LinkedIn 必填
 - ✅ **多格式输出** — 支持 DOCX（ATS 优先）、HTML（网页/打印）、LaTeX（学术/精确排版）、Markdown（零依赖保底），任选格式
@@ -155,15 +158,16 @@ resume-expert/
 ├── references/                 # 可选深度阅读（不影响 SKILL.md 独立使用）
 │   ├── industry-matrix.md      #   行业×职级全量策略（15 行业）+ 改写倾斜
 │   ├── scoring-system.md       #   评分权重表 + 分数锚点 + 基准对比 + 五维评分（娱乐/媒体）
-│   ├── scoring-golden-tests.md #   评分金标准测试集（70 份校准简历）
+│   ├── scoring-golden-tests.md #   评分金标准测试集（75 份校准简历）
 │   ├── jd-matching.md          #   JD 匹配度扫描（五维评分 + 红旗检测 + 优化建议）
+│   ├── interview-prediction.md #   面试预测（6 类问题 + Web 搜索 + 可交互 HTML Q&A 模板）
 │   ├── rewrite-rules.md        #   描述重写规则 + STAR 框架 + 动词库（含表演/音乐分类）
 │   ├── ats-guide.md            #   ATS 工作原理 + JD 逆向工程
 │   ├── chinese-ats.md          #   北森 / Moka / 大易专项适配
 │   ├── english-resume.md       #   英文简历实战示例 + 常见错误
 │   ├── docx-spec.md            #   排版参数大全（DOCX / HTML / LaTeX）+ 坑点
 │   ├── privacy-ethics.md       #   不虚构原则 + 隐私清单 + PIPL/GDPR
-│   └── low-info-strategies.md  #   极简输入策略 + 低年级/转行指南
+│   └── low-info-strategies.md #   极简输入策略 + 低年级/转行 + 空窗期/双非/大龄专项
 ├── examples/                   # 示例输出
 │   ├── sample-review-output.md
 │   ├── sample-skeleton-resume.md

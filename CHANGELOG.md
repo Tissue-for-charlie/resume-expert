@@ -5,6 +5,42 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2026-06-25
+
+### Added
+
+- **新增模式 E：面试预测与 Q&A 生成** — 基于简历内容预测面试官高频追问，让候选人在投递前准备面试，填补"简历通过筛选但面试翻车"的空白
+  - **简历信号提取**：6 类信号（项目深挖 / 技能等级 / 时间线 / 量化数据 / 职业轨迹 / 差异化），按强度 🔴🟡🟢 分级
+  - **6 类问题生成**：技术深度追问（3-4 层深度）/ 量化数据追问 / 行为面试（STAR）/ 行业认知 / 弱势因素追问 / 反向提问准备
+  - **Web 搜索增强**：5 类搜索（目标公司面经 / 岗位通用题 / 技术热点 / 行业趋势 / JD 对标），不可用时回退到内置题库
+  - **可交互 HTML Q&A**：单文件自包含（CSS/JS 内联，可离线）、移动端适配、折叠展开 / 掌握度标记 / 搜索过滤 / localStorage 存储 / 导出 Markdown
+  - **答案区设计**：建议回答方向（结论→论据→数据框架，不生成完整标准答案避免背诵）+ 简历相关内容引用 + 避免陷阱提示
+  - **高风险预警**：简历超出理解深度 / 量化数据无法解释 / 弱势因素未处理 / 技术栈与行业热点脱节
+  - **模式联动**：B→E（复用简历文本）/ D→E（叠加 JD 信号）/ A→E（评估翻车风险）/ E→C（高风险项建议修改简历）
+  - **伦理约束**：受 C1 不虚构原则约束——预测问题的目的是帮候选人准备真实经历的表达，不是教他编造答案
+- **新文件** `references/interview-prediction.md`：面试预测完整规范——信号提取规则、6 类问题生成逻辑、Web 搜索策略、HTML Q&A 模板、高风险预警、模式联动规则
+- **触发条件扩展**：新增 "面试预测" / "面试题" / "面试会问什么" / "准备面试" / "面试官会怎么问" / "面试会翻车吗" / "模拟面试" 等触发词
+- **模式切换规则扩展**：新增模式 E 相关 4 条切换路径（A→E / B→E / D→E / E→C）
+- **FAQ 扩展**：Q10 说明模式 E 不教背标准答案；Q11 说明 HTML 文件离线可用；Q12 弱势群体专项策略说明
+
+### Changed
+
+- **补齐 1.4.0 遗漏的 SKILL.md 同步**（1.4.0 已在 references/README/CHANGELOG 声明但 SKILL.md 未实际更新）：
+  - SKILL.md frontmatter 版本 1.3.0 → 1.5.0，description 补"15 个行业"+"模式 E 面试预测"+"多格式输出"+"内容质量自检"
+  - SKILL.md 行业矩阵表补娱乐/演艺行（14 → 15 行业）
+  - SKILL.md 模式 B Step 2 补五维评分变体说明（娱乐/演艺/媒体专用）
+  - SKILL.md 模式 A Step 5 从"生成 DOCX"扩展为"多格式输出"分支表（DOCX/HTML/LaTeX/Markdown）
+  - SKILL.md 模式 A Step 6 新增内容质量自检 6 项（联系方式完整性 / 荣誉奖项为空 / 代表作品为空 / 量化数据覆盖 / 量化数据一致性 / 硬性成就遗漏）
+  - SKILL.md Phase 0 新增"空目录快速判定"
+  - SKILL.md 模式 A Step 2 新增"行业感知信息收集"和"联系方式字段行业自适应"
+  - SKILL.md Step 3 行业差异化结构 4 → 5 行（补娱乐/演艺）
+  - SKILL.md T1 约束从"docx 输出规范"扩展到"多格式输出规范"
+  - SKILL.md Step 7 回退链扩展：docx-js → python-docx → HTML → LaTeX → Markdown
+  - SKILL.md references/ 索引表 4 处更新（scoring-system 补五维评分 / scoring-golden-tests 70→75 份 14→15 行业 / rewrite-rules 补表演动词库 / docx-spec 补 HTML/LaTeX）
+  - SKILL.md 各处行业计数 14 → 15
+- **`references/jd-matching.md` 行业权重映射表补娱乐/演艺行**：硬性门槛 25 / 关键词覆盖 20 / 经验匹配 15 / 资质匹配 20 / 加分项覆盖 20，与 scoring-system.md 五维评分体系对齐
+- README 版本徽章 v1.4.0 → v1.5.0
+
 ## [1.4.0] - 2026-06-25
 
 ### Added
@@ -29,7 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SKILL.md 行业矩阵表新增娱乐/演艺行，矩阵行数 14 → 15
 - SKILL.md 行业差异化结构新增娱乐/演艺（5 个差异最大行业）
 - SKILL.md T1 约束从"docx 输出规范"扩展到"多格式输出规范"
-- SKILL.md references/ 索引表更新：industry-matrix.md（15 行业）、scoring-golden-tests.md（15 行业）、scoring-system.md（15 行业+五维评分）、rewrite-rules.md（表演动词库）、docx-spec.md（HTML/LaTeX 规范）
+- SKILL.md references/ 索引表更新：industry-matrix.md（15 行业）、scoring-golden-tests.md（14→15 行业，70→75 份）、scoring-system.md（15 行业+五维评分）、rewrite-rules.md（表演动词库）、docx-spec.md（HTML/LaTeX 规范）
 - 各文件行业计数引用 14 → 15
 - README 版本徽章 v1.3.0 → v1.4.0，行业计数 14 → 15，新增格式徽章（DOCX/HTML/LaTeX/Markdown）
 - CONTRIBUTING.md 行业计数 14 → 15
@@ -164,6 +200,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SKILL.md references/ 索引表 golden tests 条目更新
 - CONTRIBUTING.md 提交前检查清单 golden test 条目更新（14 行业全覆盖）
 
+[1.5.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.5.0
 [1.4.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.4.0
 [1.3.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.3.0
 [1.2.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.2.0
