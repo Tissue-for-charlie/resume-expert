@@ -231,10 +231,12 @@ resume-expert/
 │   ├── docx-spec.md            #   排版参数大全（DOCX / HTML / LaTeX）+ 坑点
 │   ├── privacy-ethics.md       #   不虚构原则 + 隐私清单 + PIPL/GDPR
 │   └── low-info-strategies.md #   极简输入策略 + 低年级/转行 + 空窗期/双非/大龄专项
-├── examples/                   # 示例输出
-│   ├── sample-review-output.md
-│   ├── sample-skeleton-resume.md
-│   └── sample-english-star.md
+├── examples/                   # 示例输出（覆盖全部 5 种模式）
+│   ├── sample-review-output.md       #   模式 B：评审报告
+│   ├── sample-skeleton-resume.md     #   模式 A：骨架简历（信息不足时）
+│   ├── sample-english-star.md        #   模式 A：英文简历 STAR 重写
+│   ├── sample-jd-matching.md         #   模式 D：JD 匹配度扫描 🆕
+│   └── sample-interview-prediction.md #   模式 E：面试预测与 Q&A 🆕
 ├── .github/                    # Issue/PR 模板
 ├── README.md
 ├── LICENSE
