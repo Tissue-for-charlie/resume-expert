@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2026-06-25
+
+### Added
+
+- **新增行业：娱乐/演艺** — 15 个内置行业（原 14 + 娱乐/演艺）。覆盖歌手/演员/音乐人/艺人等角色，包含独立模块布局（影响力数据→代表作品→荣誉奖项→演出经历）和改写倾斜规则
+- **多格式输出支持** — Step 5 扩展为格式选择分支：
+  - **DOCX**（默认）：docx-js 生成，原有规范不变
+  - **HTML**：新增完整排版规范（CSS 内联、`@media print`、响应式、线性布局）
+  - **LaTeX**：新增完整排版规范（xelatex + xeCJK、字体配置、标点避坑、自定义命令）
+  - **Markdown**：最终保底
+  - 回退链扩展：`docx-js → python-docx → HTML → LaTeX → Markdown`
+- **内容质量自检机制** — Step 6 新增 6 项自动检查：联系方式完整性、荣誉奖项为空、代表作品为空、量化数据覆盖、量化数据一致性、硬性成就遗漏。全格式适用
+- **Phase 0 空目录快速判定** — 检测到当前目录为空且用户未提供简历文本时，跳过所有本地/GitHub/依赖扫描，直接进入 Step 1
+- **行业感知信息收集** — 模式 A Step 2 各维度内容按行业自适应：娱乐/演艺行业追问社交/流媒体平台账号；项目经历替换为演出/项目经历；竞赛/证书替换为荣誉奖项/证书；作品/博客替换为代表作品/作品集
+- **联系方式字段行业自适应** — Step 2-1 基本信息联系方式字段按行业类型追问不同平台：技术行业追问 GitHub/LinkedIn；娱乐行业追问微博/流媒体/短视频；设计行业追问作品集平台
+- **五维评分框架（娱乐/媒体行业）** — `references/scoring-system.md` 新增五维评分变体：内容质量(30) + 排版可读性(20) + 影响力数据(20) + 关键词覆盖(10) + 差异化定位(20)
+- **表演/音乐动词库** — `references/rewrite-rules.md` 新增英文表演类动作动词（Performed/Headlined/Composed/Toured 等）和中文表演类动词表（献唱/巡演/录制/编曲/统筹等）
+- **HTML/LaTeX 排版规范** — `references/docx-spec.md` 新增完整 HTML 和 LaTeX 输出规范，含字体表、布局参数、验证清单
+
+### Changed
+
+- SKILL.md 行业矩阵表新增娱乐/演艺行，矩阵行数 14 → 15
+- SKILL.md 行业差异化结构新增娱乐/演艺（5 个差异最大行业）
+- SKILL.md T1 约束从"docx 输出规范"扩展到"多格式输出规范"
+- SKILL.md references/ 索引表更新：industry-matrix.md（15 行业）、scoring-golden-tests.md（15 行业）、scoring-system.md（15 行业+五维评分）、rewrite-rules.md（表演动词库）、docx-spec.md（HTML/LaTeX 规范）
+- 各文件行业计数引用 14 → 15
+- README 版本徽章 v1.3.0 → v1.4.0，行业计数 14 → 15，新增格式徽章（DOCX/HTML/LaTeX/Markdown）
+- CONTRIBUTING.md 行业计数 14 → 15
+
 ## [1.3.0] - 2026-06-25
 
 ### Added
@@ -135,6 +164,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SKILL.md references/ 索引表 golden tests 条目更新
 - CONTRIBUTING.md 提交前检查清单 golden test 条目更新（14 行业全覆盖）
 
+[1.4.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.4.0
 [1.3.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.3.0
 [1.2.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.2.0
 [1.1.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.1.0

@@ -51,6 +51,16 @@ STAR = Situation（情境）→ Task（任务）→ Action（行动）→ Result
 | 管理 | Led, Directed, Coordinated, Mentored, Spearheaded, Orchestrated |
 | 产品/数据 | Identified, Analyzed, Drove, Launched, Scaled, Instrumented |
 | 设计 | Designed, Prototyped, Iterated, Branded, Revamped |
+| **表演/音乐/舞台** | Performed, Headlined, Recorded, Composed, Collaborated, Toured, Debuted, Produced, Arranged, Voiced, Covered, Interpreted |
+
+### 中文表演类动词推荐
+
+| 场景 | 推荐动词 |
+|------|----------|
+| 歌曲/OST | 献唱、演绎、录制、发行、创作、作曲、编曲、和声 |
+| 舞台/演出 | 举办、主演、参演、登台、巡演、领唱、压轴 |
+| 综艺/节目 | 参与、加盟、录制、常驻、飞行嘉宾 |
+| 创作/制作 | 作词、作曲、编曲、制作、监制、统筹、改编 |
 
 ### 弱动词替换对照
 

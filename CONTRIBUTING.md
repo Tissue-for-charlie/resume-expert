@@ -73,7 +73,7 @@
 
 - [ ] SKILL.md 行数是否控制在合理范围（当前 ~520 行，目标 ≤600）？如果新增内容超过 50 行，是否应考虑抽出到 `references/` 下？
 - [ ] 如果新增了行业，是否同时更新了评分权重映射表（`references/scoring-system.md`）、改写倾斜列表（`references/industry-matrix.md`）和 JD 匹配权重映射表（`references/jd-matching.md`）？
-- [ ] 如果修改了评分规则（权重/锚点/行业策略），是否同步更新了 Golden Test Set（`references/scoring-golden-tests.md`，70 份 × 14 行业全覆盖）以保持覆盖？
+- [ ] 如果修改了评分规则（权重/锚点/行业策略），是否同步更新了 Golden Test Set（`references/scoring-golden-tests.md`，70 份 × 15 行业全覆盖）以保持覆盖？
 - [ ] 如果修改了 JD 匹配相关规则（关键词归一化表 / 能力等级映射 / 红旗检测 / 行业权重），是否同步更新了 `references/jd-matching.md`？
 - [ ] 如果修改了约束规则编号（F1-F3 / C1-C3 / T1），是否全文搜索并更新了所有引用处？
 - [ ] 是否运行了隐私信息泄露检查（`grep` 真实姓名/电话/邮箱）？
