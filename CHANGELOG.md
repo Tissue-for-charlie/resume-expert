@@ -92,7 +92,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Terminology inconsistency: "行业-6 类" in old README vs. actual 14 matrix rows
 - Missing `version` frontmatter in SKILL.md — no way to track breaking changes across releases
 
-## [Unreleased]
+## [1.2.0] - 2026-06-25
 
 ### Added
 
@@ -110,6 +110,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SKILL.md references/ 索引表 golden tests 条目更新
 - CONTRIBUTING.md 提交前检查清单 golden test 条目更新（14 行业全覆盖）
 
+[1.2.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.2.0
 [1.1.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.1.0
 [1.0.1]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.0.1
 [1.0.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.0.0

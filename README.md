@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/Tissue-for-charlie/resume-expert/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
-  <a href="https://github.com/Tissue-for-charlie/resume-expert/releases"><img src="https://img.shields.io/badge/version-1.1.0-blue" alt="Version"></a>
+  <a href="https://github.com/Tissue-for-charlie/resume-expert/releases"><img src="https://img.shields.io/badge/version-1.2.0-blue" alt="Version"></a>
   <a href="#安装"><img src="https://img.shields.io/badge/platform-Claude%20Code%20%7C%20Cursor%20%7C%20Copilot%20%7C%20ChatGPT%20%7C%20Windsurf-8A2BE2" alt="Platforms"></a>
   <a href="https://github.com/Tissue-for-charlie/resume-expert/stargazers"><img src="https://img.shields.io/github/stars/Tissue-for-charlie/resume-expert?style=social" alt="Stars"></a>
 </p>
