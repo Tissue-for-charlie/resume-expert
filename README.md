@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/中文-English-brightgreen" alt="Language">
   <img src="https://img.shields.io/badge/行业-14%20类-ff69b4" alt="Industries">
   <img src="https://img.shields.io/badge/职级-实习%20%7C%20校招%20%7C%20社招-orange" alt="Career Levels">
-  <img src="https://img.shields.io/badge/SKILL.md-~700%20行-lightgrey" alt="Size">
+  <img src="https://img.shields.io/badge/SKILL.md-~740%20行-lightgrey" alt="Size">
 </p>
 
 ---
@@ -95,7 +95,7 @@ pip install pymupdf       # PDF 文本提取
 
 ```
 resume-expert/
-├── SKILL.md              # 全部逻辑，约 700 行
+├── SKILL.md              # 全部逻辑，约 740 行
 ├── README.md
 ├── LICENSE
 ├── CHANGELOG.md

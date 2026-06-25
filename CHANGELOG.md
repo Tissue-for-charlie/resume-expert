@@ -5,11 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-06-25
+
+### Added
+
+- **Pre-generation page count estimation**: Step 5 now estimates content fit before generating DOCX, with experience-level defaults (0–5y → 1 page, 5–15y → 1–2 pages, 15y+ → 2 pages; intern/campus/part-time always 1 page)
+- **Post-scoring page evaluation**: Mode B Step 3 now outputs page evaluation with three tiers (✓ okay / ⚠️ tight / 🔴 overflow) below the scoring table
+- **Protection mode**: when user signals satisfaction ("这个版本可以了"), subsequent edits default to incremental (Mode C) to avoid overwriting manual adjustments
+- **Hard constraint against script re-run**: Mode C Step C3 now explicitly forbids re-running generation scripts that would overwrite manual Word edits, with a single confirmed exception path
+
+### Changed
+
+- Mode B Step 2 scoring dimensions: "排版可读性" now includes page count check
+- Mode B Step 3 feedback tiers: 🔴 must-fix now includes page overflow, 🟡 suggest-fix now includes borderline page overflow
+
 ## [1.0.0] - 2026-06-24
 
 ### Added
 
-- 15-industry × seniority decision matrix with auto-derivation for uncovered industries
+- 14-industry × seniority decision matrix with auto-derivation for uncovered industries
+- Industry-specific structural templates for 4 high-variance industries (design, finance, law, education)
 - Three operational modes: generate from scratch (A), review (B), incremental edit (C)
 - Full mode-switching state machine across all three modes
 - ATS compatibility rules: linear layout, font separation, keyword strategy, DOCX vs PDF delivery
@@ -32,12 +47,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - FAQ section with 7 common questions
 - Companion documentation: `docs/ats-guide.md`, `docs/english-resume.md`, `docs/docx-spec.md`
 - Windows Python GBK encoding workaround for verification scripts
+- CODE_OF_CONDUCT.md (Contributor Covenant 2.1)
+- docx-js runtime version detection: `try/catch LevelFormat` pattern + package.json parsing
 
 ### Changed
 
 - Refactored monolithic SKILL.md (originally 566 lines) — extracted ATS, English, and DOCX deep dives into `docs/`
 - Decoupled Skill synergy layer into platform-agnostic rules + Claude Code enhancements + fallback strategies
 - Normalized scoring weights across all 14 built-in industries (was: one-line adjustment rule)
+- Constraint rules renumbered from 0-based flat list to 3-group system: F1-F3 (Flow), C1-C3 (Content), T1 (Tech)
+- Phase 0 scanning steps merged with Skill synergy section — eliminated ~20 lines of duplicate content
 
 ### Fixed
 
@@ -50,15 +69,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-
-- Industry-specific structural templates for 4 high-variance industries (design, finance, law, education)
-- CODE_OF_CONDUCT.md (Contributor Covenant 2.1)
-- docx-js runtime version detection: `try/catch LevelFormat` pattern + package.json parsing
-
-### Changed
-
-- Constraint rules renumbered from 0-based flat list to 3-group system: F1-F3 (Flow), C1-C3 (Content), T1 (Tech)
-- Phase 0 scanning steps merged with Skill synergy section — eliminated ~20 lines of duplicate content
-
+[1.0.1]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.0.1
 [1.0.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.0.0
