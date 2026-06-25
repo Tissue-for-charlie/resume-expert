@@ -96,16 +96,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **评分金标准测试集 (Golden Test Set)**：`references/scoring-golden-tests.md` — 6 份经人工专家评分的校准简历，覆盖 5 个分数段 × 3 个行业（互联网/金融/设计），用于验证 AI 评分一致性
-- **评分前校准流程**：`scoring-system.md` 末尾新增 AI 自检流程（找锚点→对齐权重→评分后自检→允许 ±5 波动）
-- Mode B Step 2 新增评分前校准指引，引用 golden tests 建立分数段基准感
-- SKILL.md references/ 索引表新增 `scoring-golden-tests.md` 条目
-- CONTRIBUTING.md 提交前检查清单新增 Golden Test 同步要求
+- **评分金标准测试集 (Golden Test Set) 重大扩展**：`references/scoring-golden-tests.md` — 从 6 份扩展到 **70 份**经人工专家评分的校准简历，**14 行业 × 5 分数段全覆盖**（90-100/75-89/60-74/40-59/<40），用于验证 AI 评分一致性
+- **🌐 互联网实时搜索增强**：评分前校准流程新增 Web 搜索增强步骤——可选搜索目标行业当前市场数据（JD 关键词趋势、薪资报告、竞争格局）来动态校准评分和基准中位数
+- 14 个行业新增 cases 的简历内容均参考 2025-2026 年互联网公开数据（RGF 薪酬观察、智联春招周报、脉脉高聘报告）编写，标注"🌐 Web 搜索校准"
+- `scoring-system.md` 评分前校准流程新增步骤 5（Web 搜索增强）+ 搜索 query 模板
+- 70 份 cases 按分数段分为 5 个区（90-100/75-89/60-74/40-59/<40），每区 14 个行业各一份
 
 ### Changed
 
-- README references badge 9 → 10 文件
-- README 文件树和核心能力列表中新增 golden tests 相关说明
+- `scoring-golden-tests.md` 结构重构：从平铺 → 按分数段分区，新增 14×5 全量汇总矩阵
+- SKILL.md 评分前校准指引更新（1-2 个 → 2-3 个用例，新增 Web 搜索增强说明）
+- README 核心能力列表 golden tests 描述更新（6 份 → 70 份）
+- SKILL.md references/ 索引表 golden tests 条目更新
+- CONTRIBUTING.md 提交前检查清单 golden test 条目更新（14 行业全覆盖）
 
 [1.1.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.1.0
 [1.0.1]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.0.1
