@@ -14,6 +14,7 @@
   <img src="https://img.shields.io/badge/中文-English-brightgreen" alt="Language">
   <img src="https://img.shields.io/badge/行业-14%20类-ff69b4" alt="Industries">
   <img src="https://img.shields.io/badge/职级-实习%20%7C%20校招%20%7C%20社招-orange" alt="Career Levels">
+  <img src="https://img.shields.io/badge/reference-9%20文件-blue" alt="References">
   <img src="https://img.shields.io/badge/SKILL.md-~400%20行-lightgrey" alt="Size">
 </p>
 
@@ -69,7 +70,8 @@
 ## 核心能力
 
 - ✅ **行业 × 职级适配** — 14 个行业（互联网 / 金融 / 外企 / 国企 / 产品 / 设计 / 教育 / 医疗 / 法律 / 建筑 / 媒体 / 零售 / 游戏 / 政府）+ 通用策略自动推导 × 实习 / 校招 / 社招，42+ 种组合各有策略
-- ✅ **ATS 兼容** — 线性布局、禁止表格双栏、关键词双写、格式避坑指南
+- ✅ **ATS 兼容** — 线性布局、禁止表格双栏、关键词双写、格式避坑指南。🆕 **中国 ATS 专项**：北森 / Moka / 大易适配
+- ✅ **同岗位基准对比** — 评分后自动对比同行业同职级中位数，帮用户定位竞争水位
 - ✅ **项目描述重写** — 将"负责 XX 模块"转为个人实践叙事 + 量化产出
 - ✅ **英文简历** — STAR 框架、按职能分类动作动词、严格一页、LinkedIn 必填
 - ✅ **隐私保护** — 自动过滤身份证号、完整住址、出生日期、薪资等
@@ -98,7 +100,7 @@ pip install pymupdf       # PDF 文本提取
 ```
 resume-expert/
 ├── SKILL.md              # 核心调度，约 400 行
-├── references/           # 细则文档
+├── references/           # 细则文档（9 个）
 │   ├── industry-matrix.md
 │   ├── ats-guide.md
 │   ├── chinese-ats.md
@@ -108,24 +110,17 @@ resume-expert/
 │   ├── docx-spec.md
 │   ├── privacy-ethics.md
 │   └── low-info-strategies.md
-├── README.md
-├── LICENSE
-├── CHANGELOG.md
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-├── .gitignore
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   │   ├── bug_report.md
-│   │   ├── feature_request.md
-│   │   └── config.yml
-│   └── PULL_REQUEST_TEMPLATE.md
 ├── examples/
 │   ├── sample-review-output.md    # 评审报告示例
 │   ├── sample-skeleton-resume.md  # 骨架简历示例
 │   └── sample-english-star.md     # 英文 STAR 重写示例
+├── .github/                      # Issue/PR 模板
+├── README.md
+├── LICENSE
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
+└── CODE_OF_CONDUCT.md
+```
 
 [📂 查看示例输出 →](examples/)
 
