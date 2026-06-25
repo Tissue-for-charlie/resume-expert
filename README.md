@@ -5,6 +5,10 @@
 </p>
 
 <p align="center">
+  <em>📝 Turn your AI coding assistant into a professional resume expert — generate, critique, and optimize resumes across 15 industries, with ATS compatibility, JD matching, and interview prediction.</em>
+</p>
+
+<p align="center">
   <a href="https://github.com/Tissue-for-charlie/resume-expert/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
   <a href="https://github.com/Tissue-for-charlie/resume-expert/releases"><img src="https://img.shields.io/badge/version-1.5.0-blue" alt="Version"></a>
   <a href="#安装"><img src="https://img.shields.io/badge/platform-Claude%20Code%20%7C%20Cursor%20%7C%20Copilot%20%7C%20ChatGPT%20%7C%20Windsurf-8A2BE2" alt="Platforms"></a>
@@ -16,8 +20,6 @@
   <img src="https://img.shields.io/badge/行业-15%20类-ff69b4" alt="Industries">
   <img src="https://img.shields.io/badge/职级-实习%20%7C%20校招%20%7C%20社招-orange" alt="Career Levels">
   <img src="https://img.shields.io/badge/格式-DOCX%20%7C%20HTML%20%7C%20LaTeX%20%7C%20Markdown-blue" alt="Formats">
-  <img src="https://img.shields.io/badge/references-12%20文件-blue" alt="References">
-  <img src="https://img.shields.io/badge/SKILL.md-~700%20行-lightgrey" alt="Size">
 </p>
 
 ---
@@ -27,6 +29,20 @@
 一个 **AI Skill** —— 把 `SKILL.md` 丢进项目中，你的 AI 编程助手立刻获得简历专家的能力。自动识别意图，自动适配行业和职级，支持 DOCX / HTML / LaTeX / Markdown 多格式输出，内置内容质量自检机制，并支持针对目标岗位 JD 做匹配度扫描。
 
 > 不是模板生成器。内置招聘市场知识：ATS 规则、行业×职级策略、JD 命中率分析、多格式排版规范、内容自检。
+
+### 和传统方案比好在哪？
+
+| 场景 | 简历模板网站 | ChatGPT 直出 | 付费人工优化 | **resume-expert** |
+|------|------------|-------------|------------|:---:|
+| 生成方式 | 填空式排版 | 单次对话生成 | 顾问人工修改 | AI 协作式生成+迭代 |
+| 行业×职级适配 | ❌ 通用模板 | ❌ 取决于提示词 | ✅ 依顾问水平 | ✅ 15 行业 × 3 职级全覆盖 |
+| ATS 兼容 | ❌ 易被筛掉 | ❌ 无优化 | 部分有 | ✅ 北森/Moka/大易专项 |
+| 多格式输出 | DOCX/PDF | 纯文本 | PDF | DOCX+HTML+LaTeX+Markdown |
+| 简历评审 | ❌ | 人工判断 | ✅ 顾问评价 | ✅ 四维评分+基准对比 |
+| JD 匹配度扫描 | ❌ | ❌ | 部分有 | ✅ 五维评分+红旗检测 |
+| 面试预测 | ❌ | ❌ | ❌ | ✅ 6 类问题+可交互 HTML |
+| 隐私保护 | ⚠️ 数据上传 | ⚠️ 数据上传 | ✅ | ✅ PIPL/GDPR 过滤 |
+| 成本 | 免费~¥100/次 | API 费用 | ¥200~2000/次 | **免费** |
 
 ---
 
@@ -51,7 +67,19 @@ git clone https://github.com/Tissue-for-charlie/resume-expert.git
 
 > ⚠️ Cursor / Copilot / Windsurf / ChatGPT 用户：只用 `curl` 下载 SKILL.md 单文件即可正常使用全部功能——核心规则（行业矩阵、ATS 避坑、评分体系、重写策略）都在里面。`references/` 目录是可选的深度参考资料，AI 需要时会提示你查看，但不影响正常使用。当然，直接 `git clone` 体验最完整。
 
-装好后，对话中说"帮我做一份简历"即触发。
+### 安装后如何触发？
+
+所有平台触发方式一致：**在对话中自然输入需求即可**。AI 会自动识别意图并唤起 resume-expert 技能。
+
+| 你想做什么 | 这样说 |
+|-----------|--------|
+| 从零生成 | "帮我做一份简历，投字节跳动后端开发" |
+| 评审已有简历 | "帮我看一下这份简历"（附上简历内容/文件） |
+| 修改某段内容 | "帮我把这段改一下"（圈定要改的部分） |
+| JD 匹配度分析 | 附上 JD 正文 + "看看这份简历和这个 JD 匹配度" |
+| 面试预测 | "帮我准备面试，投这个岗位" + 附上 JD |
+
+> 💡 如果 AI 没有自动触发，可以明确说 **"用 resume-expert 帮我..."**。
 
 ---
 
@@ -117,22 +145,51 @@ git clone https://github.com/Tissue-for-charlie/resume-expert.git
 
 ---
 
+## 🎬 输出亮点
+
+### 📄 简历 DOCX
+ATS 兼容排版 · 线性单栏布局 · 页数自动控制（应届≤1 页，3 年+≤2 页）
+
+> 你想要的 → AI 收集信息 → 重写项目描述 → 生成 **.docx** ← 可直接投递
+
+### 📊 评审报告
+四维评分（内容 / 结构 / 关键词 / 格式）· 同岗位中位数基准对比 · 逐条修改建议（🔴🟡🟢 优先级）
+
+> 粘贴简历 → AI 输出评分 + 具体待改项 + 修改示范
+
+### 🎯 JD 匹配度报告
+五维评分雷达 · 🚩 红旗检测（必备项缺失 / 经验不足 / 学历不达标）· 关键词覆盖清单 · 优先级排序的补齐建议
+
+> 附上 JD → AI 自动匹配 → 输出命中率 + 缺失项 + 优化路线
+
+### 🎙 面试预测 HTML
+交互式 Q&A · 离线自包含（单 HTML 文件）· 移动端适配 · ⭐ 掌握度标记 · 6 类问题覆盖（技术深度 / 量化数据 / 行为面试 / 行业认知 / 弱势因素 / 反向提问）
+
+> 准备好简历 → AI 预测面试题 + Web 搜索面经增强 → 生成 **面试准备_姓名.html**，手机电脑都能打开
+
+---
+
 ## 核心能力
 
+### 🎯 核心引擎
 - ✅ **行业 × 职级适配** — 15 个行业（互联网 / 金融 / 外企 / 国企 / 产品 / 设计 / 教育 / 医疗 / 法律 / 建筑 / 媒体 / **娱乐/演艺** / 零售 / 游戏 / 政府）+ 通用策略自动推导 × 实习 / 校招 / 社招，45+ 种组合各有策略
-- ✅ **ATS 兼容** — 线性布局、禁止表格双栏、关键词双写、格式避坑指南。**中国 ATS 专项**：北森 / Moka / 大易适配
-- ✅ **同岗位基准对比** — 评分后自动对比同行业同职级中位数，帮用户定位竞争水位。**金标准评分测试集**：75 份校准简历（15 行业 × 5 分数段全覆盖）+ Web 搜索增强
-- ✅ **JD 匹配度扫描** 🆕 — 对标具体岗位 JD 的命中率分析：五维评分（硬性门槛 / 关键词覆盖 / 经验匹配 / 资质匹配 / 加分项覆盖）+ 红旗检测（必备项缺失 / 经验不足 / 学历不达标）+ 优化建议（按优先级补齐缺失关键词，受 C1 不虚构原则约束）
-- ✅ **面试预测与 Q&A 生成** 🆕 — 基于简历内容预测面试官高频追问（6 类问题：技术深度 / 量化数据 / 行为面试 / 行业认知 / 弱势因素 / 反向提问）+ Web 搜索面经增强 + 生成可交互 HTML Q&A（离线自包含、移动端适配、掌握度标记）
 - ✅ **弱势群体专项策略** 🆕 — 自动检测空窗期 / 双非背景 / 大龄求职者三类候选人，应用差异化简历策略 + 面试话术模板 + 投递路径建议
 - ✅ **项目描述重写** — 将"负责 XX 模块"转为个人实践叙事 + 量化产出
 - ✅ **英文简历** — STAR 框架、按职能分类动作动词、严格一页、LinkedIn 必填
-- ✅ **多格式输出** — 支持 DOCX（ATS 优先）、HTML（网页/打印）、LaTeX（学术/精确排版）、Markdown（零依赖保底），任选格式
-- ✅ **内容质量自检** — 生成后自动检查联系方式完整性、量化数据覆盖、荣誉奖项/代表作缺失等，确保内容完备
-- ✅ **隐私保护** — 自动过滤身份证号、完整住址、出生日期、薪资等（参考 PIPL / GDPR）
 - ✅ **骨架简历** — 信息不足时先生成占位版，后续逐段填充，不反复追问
-- ✅ **四层回退** — docx-js → python-docx → HTML/LaTeX → Markdown，任一层失败自动降级
 - ✅ **批量模式** — 用户想快速推进时，一次性抛出全部待确认项
+
+### 📊 智能分析
+- ✅ **JD 匹配度扫描** 🆕 — 对标具体岗位 JD 的命中率分析：五维评分（硬性门槛 / 关键词覆盖 / 经验匹配 / 资质匹配 / 加分项覆盖）+ 红旗检测（必备项缺失 / 经验不足 / 学历不达标）+ 优化建议（按优先级补齐缺失关键词，受 C1 不虚构原则约束）
+- ✅ **面试预测与 Q&A 生成** 🆕 — 基于简历内容预测面试官高频追问（6 类问题：技术深度 / 量化数据 / 行为面试 / 行业认知 / 弱势因素 / 反向提问）+ Web 搜索面经增强 + 生成可交互 HTML Q&A（离线自包含、移动端适配、掌握度标记）
+- ✅ **同岗位基准对比** — 评分后自动对比同行业同职级中位数，帮用户定位竞争水位。**金标准评分测试集**：75 份校准简历（15 行业 × 5 分数段全覆盖）+ Web 搜索增强
+- ✅ **内容质量自检** — 生成后自动检查联系方式完整性、量化数据覆盖、荣誉奖项/代表作缺失等，确保内容完备
+
+### 🛡 输出与兼容
+- ✅ **ATS 兼容** — 线性布局、禁止表格双栏、关键词双写、格式避坑指南。**中国 ATS 专项**：北森 / Moka / 大易适配
+- ✅ **多格式输出** — 支持 DOCX（ATS 优先）、HTML（网页/打印）、LaTeX（学术/精确排版）、Markdown（零依赖保底），任选格式
+- ✅ **四层回退** — docx-js → python-docx → HTML/LaTeX → Markdown，任一层失败自动降级
+- ✅ **隐私保护** — 自动过滤身份证号、完整住址、出生日期、薪资等（参考 PIPL / GDPR）
 
 ---
 
