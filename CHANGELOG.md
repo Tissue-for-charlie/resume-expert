@@ -94,6 +94,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **评分金标准测试集 (Golden Test Set)**：`references/scoring-golden-tests.md` — 6 份经人工专家评分的校准简历，覆盖 5 个分数段 × 3 个行业（互联网/金融/设计），用于验证 AI 评分一致性
+- **评分前校准流程**：`scoring-system.md` 末尾新增 AI 自检流程（找锚点→对齐权重→评分后自检→允许 ±5 波动）
+- Mode B Step 2 新增评分前校准指引，引用 golden tests 建立分数段基准感
+- SKILL.md references/ 索引表新增 `scoring-golden-tests.md` 条目
+- CONTRIBUTING.md 提交前检查清单新增 Golden Test 同步要求
+
+### Changed
+
+- README references badge 9 → 10 文件
+- README 文件树和核心能力列表中新增 golden tests 相关说明
+
 [1.1.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.1.0
 [1.0.1]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.0.1
 [1.0.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.0.0

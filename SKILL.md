@@ -221,7 +221,10 @@ Python 不可用时用 JSZip 回退。Windows GBK 编码坑：验证脚本首行
 
 默认基准值按行业×职级查表（详见 [`references/scoring-system.md`](references/scoring-system.md)）。
 
-> 📖 [`references/scoring-system.md`](references/scoring-system.md) — 权重映射全表、分数锚点、基准对比默认值、反馈格式模板
+**评分前校准**：评分前应先速读 [`references/scoring-golden-tests.md`](references/scoring-golden-tests.md) 中与目标行业/职级最接近的 1-2 个 Golden Test 用例，建立分数段基准感，保证评分一致性。
+
+> 📖 [`references/scoring-system.md`](references/scoring-system.md) — 权重映射全表、分数锚点、基准对比默认值、反馈格式模板、评分前校准流程
+> 📖 [`references/scoring-golden-tests.md`](references/scoring-golden-tests.md) — 6 份金标准简历 + 专家评分明细，覆盖 5 个分数段 × 3 个行业
 
 ### Step 3：分级反馈
 
@@ -386,7 +389,8 @@ STAR 框架、严格一页、LinkedIn 必填、省略"I"。详见 [`references/r
 | 文件 | 内容 |
 |------|------|
 | [`industry-matrix.md`](references/industry-matrix.md) | 行业×职级全量策略、差异化结构、改写倾斜全表、作品集链接处理 |
-| [`scoring-system.md`](references/scoring-system.md) | 评分权重映射、分数锚点、**同岗位基准对比**、反馈格式 |
+| [`scoring-system.md`](references/scoring-system.md) | 评分权重映射、分数锚点、**同岗位基准对比**、反馈格式、评分前校准流程 |
+| [`scoring-golden-tests.md`](references/scoring-golden-tests.md) | 🆕 **评分金标准测试集**：6 份校准简历 + 专家评分明细，保证评分一致性 |
 | [`rewrite-rules.md`](references/rewrite-rules.md) | 项目描述重写对照表、STAR 框架、英文动词库、常见错误 |
 | [`ats-guide.md`](references/ats-guide.md) | ATS 工作原理、解析流程、JD 逆向工程 |
 | [`chinese-ats.md`](references/chinese-ats.md) | **🆕 中国 ATS 专项**：北森/Moka/大易 解析特点、编码规则、平台差异 |

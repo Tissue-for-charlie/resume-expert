@@ -15,7 +15,7 @@
   <img src="https://img.shields.io/badge/中文-English-brightgreen" alt="Language">
   <img src="https://img.shields.io/badge/行业-14%20类-ff69b4" alt="Industries">
   <img src="https://img.shields.io/badge/职级-实习%20%7C%20校招%20%7C%20社招-orange" alt="Career Levels">
-  <img src="https://img.shields.io/badge/references-9%20文件-blue" alt="References">
+  <img src="https://img.shields.io/badge/references-10%20文件-blue" alt="References">
   <img src="https://img.shields.io/badge/SKILL.md-~400%20行-lightgrey" alt="Size">
 </p>
 
@@ -92,7 +92,7 @@ git clone https://github.com/Tissue-for-charlie/resume-expert.git
 
 - ✅ **行业 × 职级适配** — 14 个行业（互联网 / 金融 / 外企 / 国企 / 产品 / 设计 / 教育 / 医疗 / 法律 / 建筑 / 媒体 / 零售 / 游戏 / 政府）+ 通用策略自动推导 × 实习 / 校招 / 社招，42+ 种组合各有策略
 - ✅ **ATS 兼容** — 线性布局、禁止表格双栏、关键词双写、格式避坑指南。🆕 **中国 ATS 专项**：北森 / Moka / 大易适配
-- ✅ **同岗位基准对比** — 评分后自动对比同行业同职级中位数，帮用户定位竞争水位
+- ✅ **同岗位基准对比** — 评分后自动对比同行业同职级中位数，帮用户定位竞争水位。🆕 **金标准评分测试集**：6 份校准简历保证评分一致性
 - ✅ **项目描述重写** — 将"负责 XX 模块"转为个人实践叙事 + 量化产出
 - ✅ **英文简历** — STAR 框架、按职能分类动作动词、严格一页、LinkedIn 必填
 - ✅ **隐私保护** — 自动过滤身份证号、完整住址、出生日期、薪资等（参考 PIPL / GDPR）
@@ -124,6 +124,7 @@ resume-expert/
 ├── references/                 # 可选深度阅读（不影响 SKILL.md 独立使用）
 │   ├── industry-matrix.md      #   行业×职级全量策略 + 改写倾斜
 │   ├── scoring-system.md       #   评分权重表 + 分数锚点 + 基准对比
+│   ├── scoring-golden-tests.md  #   🆕 评分金标准测试集（6 份校准简历）
 │   ├── rewrite-rules.md        #   描述重写规则 + STAR 框架 + 动词库
 │   ├── ats-guide.md            #   ATS 工作原理 + JD 逆向工程
 │   ├── chinese-ats.md          #   北森 / Moka / 大易专项适配
