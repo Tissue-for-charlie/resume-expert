@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/中文-English-brightgreen" alt="Language">
   <img src="https://img.shields.io/badge/行业-14%20类-ff69b4" alt="Industries">
   <img src="https://img.shields.io/badge/职级-实习%20%7C%20校招%20%7C%20社招-orange" alt="Career Levels">
-  <img src="https://img.shields.io/badge/SKILL.md-~740%20行-lightgrey" alt="Size">
+  <img src="https://img.shields.io/badge/SKILL.md-~400%20行-lightgrey" alt="Size">
 </p>
 
 ---
@@ -89,13 +89,25 @@ pip install pymupdf       # PDF 文本提取
 
 无需全部安装——缺失时 AI 会自动降级到 Markdown 输出或纯文本评审。
 
+**零依赖方案**（设计师/文科用户友好）：不需要安装任何工具。在对话中直接说"输出 Markdown 版本"，AI 会产出一份格式精美的纯文本简历，复制到 Word 即可。
+
 ---
 
 ## 文件
 
 ```
 resume-expert/
-├── SKILL.md              # 全部逻辑，约 740 行
+├── SKILL.md              # 核心调度，约 400 行
+├── references/           # 细则文档
+│   ├── industry-matrix.md
+│   ├── ats-guide.md
+│   ├── chinese-ats.md
+│   ├── scoring-system.md
+│   ├── rewrite-rules.md
+│   ├── english-resume.md
+│   ├── docx-spec.md
+│   ├── privacy-ethics.md
+│   └── low-info-strategies.md
 ├── README.md
 ├── LICENSE
 ├── CHANGELOG.md
@@ -112,11 +124,8 @@ resume-expert/
 │   ├── sample-review-output.md    # 评审报告示例
 │   ├── sample-skeleton-resume.md  # 骨架简历示例
 │   └── sample-english-star.md     # 英文 STAR 重写示例
-└── docs/
-    ├── ats-guide.md       # ATS 工作原理与 JD 逆向工程
-    ├── english-resume.md  # STAR 框架与英文简历规范
-    └── docx-spec.md       # 排版参数与 docx-js 常见坑点
-```
+├── CHANGELOG.md
+├── CONTRIBUTING.md
 
 [📂 查看示例输出 →](examples/)
 

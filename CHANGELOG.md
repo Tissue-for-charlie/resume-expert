@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-06-25
+
+### Added
+
+- **Chinese ATS-specific adaptation**: new `references/chinese-ats.md` covering 北森/Beisen, Moka, 大易/Dayee parsing behaviors, GBK quirks, Chinese JD keyword patterns, and platform-specific document handling
+- **Horizontal benchmark comparison**: Mode B scoring now appends a per-industry/seniority benchmark row (median + top-25% threshold) for relative positioning in the candidate pool
+- **Government/non-profit matrix deepening**: expanded row with 选调类别 (定向/非定向), 申论/行测 scores, 基层服务项目 (西部计划/三支一扶/特岗); added Step 4 rewrite tilt for public sector
+- **PIPL/GDPR compliance note**: C2 privacy constraint now references PIPL Article 6 and GDPR Article 5(1)(c) data minimization principles
+- **Zero-dependency path** in README: explicit Markdown output guidance for non-technical users (designers, liberal arts)
+- **Mode A dimension auto-skip**: 核心课程 (2a) and 到岗时间 (8) now auto-skip for experienced candidates and low-information scenarios
+- **references/ directory**: new architecture — SKILL.md slimmed to ~400 lines as scheduling layer; 9 reference files for detailed rules
+
+### Changed
+
+- **Architecture refactor**: SKILL.md 735 → 396 lines; detailed content extracted to `references/`
+  - `docs/ats-guide.md` → `references/ats-guide.md`
+  - `docs/english-resume.md` → `references/english-resume.md`
+  - `docs/docx-spec.md` → `references/docx-spec.md`
+  - 6 new reference files: `industry-matrix.md`, `chinese-ats.md`, `scoring-system.md`, `rewrite-rules.md`, `privacy-ethics.md`, `low-info-strategies.md`
+  - `docs/` directory removed
+- ATS section condensed; Chinese ATS cross-reference added
+- Mode B scoring section slimmed; extended scoring details moved to `references/scoring-system.md`
+- Mode B Step 3 now includes benchmark comparison row after score table
+- All internal cross-references updated from `docs/` to `references/`
+
 ## [1.0.1] - 2026-06-25
 
 ### Added
@@ -69,5 +94,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+[1.1.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.1.0
 [1.0.1]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.0.1
 [1.0.0]: https://github.com/Tissue-for-charlie/resume-expert/releases/tag/v1.0.0

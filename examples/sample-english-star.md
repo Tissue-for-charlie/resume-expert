@@ -36,4 +36,4 @@
 
 ---
 
-> 📖 完整英文简历规则见 [`docs/english-resume.md`](../docs/english-resume.md)
+> 📖 完整英文简历规则见 [`references/english-resume.md`](../references/english-resume.md)
