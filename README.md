@@ -241,6 +241,18 @@ resume-expert/
 
 ---
 
+## ⭐ 支持项目 / Support
+
+如果这个项目对你有帮助，欢迎通过以下方式支持：
+
+- ⭐ **Star** — 点个 Star，让更多人发现
+- 🍴 **Fork** — 定制属于自己的简历专家
+- 🐛 **Issue** — [报告 Bug](https://github.com/Tissue-for-charlie/resume-expert/issues/new?template=bug_report.md) 或 [提议新功能](https://github.com/Tissue-for-charlie/resume-expert/issues/new?template=feature_request.md)
+- 💬 **Discussion** — [加入讨论](https://github.com/Tissue-for-charlie/resume-expert/discussions)
+- 🤝 **PR** — 查看[贡献指南](CONTRIBUTING.md)参与协作
+
+---
+
 ## 许可证
 
 MIT © [Tissue-for-charlie](https://github.com/Tissue-for-charlie)
